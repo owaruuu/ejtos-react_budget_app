@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 const Budget = () => {
-    const { budget, expenses } = useContext(AppContext);
+    const { budget, expenses, dispatch } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     const [newAcceptedBudget, setAcceptedBudget] = useState(budget);
 
@@ -52,6 +52,12 @@ const Budget = () => {
         }
 
         //else, set the new budget
+        //tambien deberia llamar al reducer para cambiar el estado global
+        dispatch({
+            type: "SET_BUDGET",
+            payload: newBudget,
+        });
+
         setAcceptedBudget(newBudget);
     };
 

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import Select, { components } from "react-select";
-import "../App.css";
 
 const options = [
     { value: "$ Dollar", label: "$ Dollar" },
